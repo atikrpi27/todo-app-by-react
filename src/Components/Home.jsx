@@ -16,9 +16,9 @@ export default function Home() {
             description: "This is todo number 2.",
             date: "02-02-2023"
         },
-  ]
+    ]
 
-  return <div>
-    <Todos todos={todos} />
-  </div>;
+    return <div>
+        <Todos todos={todos} />
+    </div>;
 }

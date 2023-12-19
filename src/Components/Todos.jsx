@@ -7,7 +7,8 @@ export default function Todos(props) {
 
     return (
         <section>
-            {
+            <h2>Todo List:</h2>
+            {                
                 props.todos.map((todo) => (
                     <Todo key={todo.id} todo={todo} />
                 ))
