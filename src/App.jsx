@@ -1,8 +1,14 @@
 import React from 'react'
 
+import Home from './Components/Home'
+
+
 function App() {
   return (
-    <div>Todo App</div>
+    <div>
+      <h1>Todo App</h1>
+      <Home />
+    </div>
   )
 }
 
