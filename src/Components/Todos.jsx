@@ -1,18 +1,15 @@
-import React from "react";
+import React from 'react'
 
-import Todo from "./Todo";
+import Todo from './Todo'
 
-export default function Todos(props) {
-    // console.log(todo)
-
-    return (
-        <section>
-            <h2>Todo List:</h2>
-            {                
-                props.todos.map((todo) => (
-                    <Todo key={todo.id} todo={todo} />
-                ))
-            }
-        </section>
-    )
+function Todos(props) {
+    // console.log(props.todos)
+    return <section>
+        {
+            props.todos.map((todo,index) => <Todo key={index} todo={todo} />)
+        }
+    </section>
+    
 }
+
+export default Todos;

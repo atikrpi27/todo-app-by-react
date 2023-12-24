@@ -1,15 +1,14 @@
 import React from 'react'
 
 export default function Todo(props) {
+    const {id, title, description} = props.todo;
     console.log(props.todo)
-    const { id, title, description, date } = props.todo;
-    return (
-        <article>
-            <div>
-                <h3>{title}</h3>
-                <p>{description}</p>
-                <p>{date}</p>
-            </div>
-        </article>
-    )
+  return (
+    <article>
+        <div>
+            <h2>{title}</h2>
+            <p>{description}</p>
+        </div>
+    </article>
+  )
 }

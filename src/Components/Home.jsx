@@ -1,24 +1,36 @@
-import React from "react";
+import React, { useState } from 'react'
+import Todos from './Todos'
+import Form from './Form'
 
-import Todos from "./Todos";
+// const localTodo = [
+//     {
+//         id: 1,
+//         title: "Title 1",
+//         description: "This is description-1 for Title-1"
+//     },
+//     {
+//         id: 2,
+//         title: "Title 2",
+//         description: "This is description-2 for Title-2"
+//     }
+// ]
 
-export default function Home() {
-    let todos = [
-        {
-            id: 1,
-            title: "Todo-1",
-            description: "This is todo number 1.",
-            date: "01-02-2023"
-        },
-        {
-            id: 2,
-            title: "Todo-2",
-            description: "This is todo number 2.",
-            date: "02-02-2023"
-        },
-    ]
+function Home() {
 
-    return <div>
-        <Todos todos={todos} />
-    </div>;
+    const [todos, setTodo] = useState([])
+
+    const handleAddTodo = (newTodo) =>{
+       setTodo((prevTodos) => {
+        return [ ...prevTodos, {newTodo} ]
+       })
+    }
+
+    return (
+        <div>
+            <Form onAddTodo={handleAddTodo} />
+            <Todos todos={todos} />
+        </div>
+    )
 }
+
+export default Home
