@@ -15,11 +15,18 @@ function Home() {
         console.log(todo)
     };
 
+    const handleRemoveTodo = (id) => {
+        setTodos((prevTodos) => {
+            const removeTodo = prevTodos.filter((todo) => todo.id !== id );
+            return removeTodo;
+        })
+    }
+
     return (
         <div>
             <h1>Todo App</h1>
             <Form onAddTodo={handleAddTodo} />
-            <Todos todos={todos} />
+            <Todos todos={todos} onRemoveTodo={handleRemoveTodo} />
         </div>
     )
 }
