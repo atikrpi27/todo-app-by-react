@@ -1,5 +1,7 @@
 import React from 'react'
 
+import style from './todo.module.css'
+
 export default function Todo(props) {
     const { title, description } = props.todo;
     const {id} = props;

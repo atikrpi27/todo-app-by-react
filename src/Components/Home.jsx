@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import Todos from './Todos'
 import Form from './Form'
 import { v4 as uuidv4 } from 'uuid'
+import style from './home.module.css'
 
 function Home() {
 
@@ -23,8 +24,8 @@ function Home() {
     }
 
     return (
-        <div>
-            <h1>Todo App</h1>
+        <div className={style.container}>
+            <h1 style={{ color: "white" }}>Todo App</h1>
             <Form onAddTodo={handleAddTodo} />
             <Todos todos={todos} onRemoveTodo={handleRemoveTodo} />
         </div>
