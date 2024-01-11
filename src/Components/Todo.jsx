@@ -11,13 +11,13 @@ export default function Todo(props) {
     };
     
     return (
-        <article>
+        <article className={style.todo}>
             <div>
                 <h2>{title}</h2>
                 <p>{description}</p>
             </div>
             <div>
-                <button onClick={() => {handleRemoveTodo(id)} } >Delete</button>
+                <button className={style.btn} onClick={() => {handleRemoveTodo(id)} } >Delete</button>
             </div>
         </article>
     )
