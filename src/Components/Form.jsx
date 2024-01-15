@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 
+import style from './form.module.css'
+
 export default function Form(props) {
 
     const [todo, setTodo] = useState({ title: "", description: "" });
@@ -20,17 +22,20 @@ export default function Form(props) {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
-            <div>
+        <form className={style.form} onSubmit={handleSubmit}>
+            <div className={style['form-field']}>
                 <label htmlFor="title">Title:</label>
                 <input type="text" name='title' value={title} onChange={handleData} />
             </div>
-            <div>
+            <div className={style['form-field']}>
                 <label htmlFor="description">Description:</label>
-                <input type="text" name='description' value={description} onChange={handleData} />
+                <textarea type="text" name='description' value={description} onChange={handleData} />
             </div>
-            <div>
-                <button type='submit'>Submit</button>
+            <div style={{display:'flex', flexDirection:'row'}}>
+                <div style={{width:'20%'}}></div>
+                <div style={{width:'80%', margin: '0 auto'}}>
+                    <button type='submit'>Submit</button>
+                </div>
             </div>
         </form>
     )
